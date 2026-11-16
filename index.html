@@ -15,23 +15,34 @@
 <body>
 
 <h1>Inkfall — Privacy Policy</h1>
-<p class="muted">Last updated: 13 November 2026</p>
+<p class="muted">Last updated: 17 November 2026</p>
 
 <p>This privacy policy explains how the mobile game <strong>Inkfall</strong> handles user data.
 By using the app you agree to this policy.</p>
 
 <h2>Information We Collect</h2>
 <p>Inkfall does not require you to create an account or provide personal information such as your name,
-email address, or phone number. Your game progress and settings are stored only on your device.</p>
+email address, or phone number. Your game progress and settings are stored on your device and, if you are signed in
+to Google Play Games, also in your own Google Play Games account (see <em>Cloud Save</em> below). We do not run
+servers of our own that store your progress.</p>
 <p>The following data is collected automatically through the third-party services listed below:</p>
 <ul>
   <li><strong>App interactions:</strong> gameplay events such as when a run ends, how long it lasted,
-  how many enemies were defeated, the level reached, and the map and mode played; and, for optional reward ads,
-  when an ad was offered, started, completed or failed.</li>
-  <li><strong>Device and app identifiers:</strong> the Firebase app instance ID and installation ID, and the
-  device's advertising ID (used by our ad partners, see below).</li>
-  <li><strong>Device information:</strong> device model, operating system version, language, and app version.</li>
+  how many enemies were defeated, the level reached, and the map and mode played; for optional reward ads,
+  when an ad was offered, started, completed or failed, and the estimated revenue of an ad that was shown;
+  for the in-game store, when it was opened, which offers it showed, and when a purchase was started, completed,
+  cancelled or failed, together with the product and the result of its receipt check; and whether cloud save
+  sign-in and syncing worked.</li>
+  <li><strong>Purchase history:</strong> which product you bought, its price and currency, and the Google Play order
+  ID kept in your save (see <em>In-App Purchases</em> below).</li>
+  <li><strong>Device and app identifiers:</strong> the Firebase app instance ID and installation ID, the
+  device's advertising ID (used by our ad partners, see below), and, only if you play online co-op, an anonymous
+  Unity player ID.</li>
+  <li><strong>Device and diagnostic information:</strong> device model, operating system version, language, and app
+  version, and technical performance and error data collected by the ad SDK.</li>
   <li><strong>Approximate location:</strong> country or region, estimated from your IP address or SIM.</li>
+  <li><strong>Nickname (online co-op only):</strong> the name you type in the co-op menu, shown to the other players
+  in your room.</li>
 </ul>
 <p>All of this data is encrypted in transit.</p>
 
@@ -52,40 +63,86 @@ This data is shared with them for advertising; it is not sold by us for any othe
 Inkfall asks before the first ad whether ads may be personalised; you can change this at any time in
 <em>Settings &gt; Privacy Choices</em>. Anywhere, you can reset or delete your advertising ID, or opt out of
 personalised ads, in your device settings (on Android: <em>Settings &gt; Google &gt; Ads</em>). Ads keep
-working either way, with the same rewards.</p>
+working either way, with the same rewards. Owners of the Supporter Pack collect these rewards without watching
+an ad.</p>
+
+<h2>In-App Purchases</h2>
+<p>Inkfall offers optional in-app purchases: the <strong>Supporter Pack</strong>, a one-time purchase, and
+<strong>token and gold packs</strong>, which can be bought more than once. Nothing in the game requires a
+purchase.</p>
+<p>Purchases are processed by <strong>Google Play</strong> through Google Play Billing (the app uses Unity In-App
+Purchasing to talk to it). Your payment card, bank and billing details are entered in Google Play and handled only
+by Google; we never receive them.</p>
+<p>To deliver what you bought, the game receives from Google Play the product ID, the order ID and the purchase
+receipt that Google signs (it contains a purchase token). The receipt is checked <strong>on your device</strong> to
+confirm that the purchase is genuine; it is not sent to us and not stored. The game keeps a record of delivered
+orders (order ID and product) in your save, so that each purchase is delivered exactly once, including after a
+reinstall; this record is part of the cloud save described below. When the game starts, it asks Google Play which
+one-time purchases you own, so the Supporter Pack is restored on a new install (or with <em>Settings &gt; Restore
+Purchases</em>) and removed if it was refunded.</p>
+<p>Google Play reports completed purchases (product, price and currency) to Google Analytics for Firebase so that
+we can see sales figures; our own store events carry the product and the result, but not order IDs or receipts.</p>
+<p><strong>Refunds</strong> are handled by Google Play under its
+<a href="https://support.google.com/googleplay/answer/2479637">refund policy</a>; you can request one from your
+Google Play order history.</p>
+
+<h2>Cloud Save</h2>
+<p>If you are signed in to <strong>Google Play Games</strong> on your device, Inkfall stores a copy of your save in
+<strong>Saved Games</strong> in your own Play Games account, so that your progress comes back when you reinstall
+the game or move to a new device with the same Google account. The save holds your game progress, unlocks,
+currencies, settings, co-op nickname, Supporter Pack status and the record of delivered orders. It is stored by
+Google under the <a href="https://policies.google.com/privacy">Google Privacy Policy</a>; we have no access to it
+outside the game on your device. You can sign out of Play Games, or delete the game's saved data from your Google
+Play Games settings, at any time; the game then keeps your progress on this device only.</p>
+
+<h2>Online Co-op</h2>
+<p>When you host or join an online co-op room, the game signs in anonymously to <strong>Unity Gaming
+Services</strong>, which creates a random player ID that is not linked to your name or Google account. Rooms are run
+by Unity's Multiplayer Services and game traffic between the players passes through Unity Relay servers, which see
+your IP address. The players in your room see your nickname, the character, weapon and colour you picked, your
+upgrade levels and whether you are ready or away. Room data is removed when the room closes. If you never play
+online co-op, none of this happens.</p>
 
 <h2>Third-Party Services</h2>
 <ul>
-  <li><strong>Google Analytics for Firebase</strong> — usage statistics, such as how many people are playing
-  and how runs go, to help us improve the game.</li>
-  <li><strong>Firebase Remote Config</strong> — delivers game configuration, such as update notices and which
-  reward offers are switched on.</li>
+  <li><strong>Google Analytics for Firebase</strong> — usage statistics, such as how many people are playing,
+  how runs go, how reward ads and the store are used, and purchase revenue, to help us improve the game.</li>
+  <li><strong>Firebase Remote Config</strong> — delivers game configuration, such as update notices, which reward
+  offers, store and co-op features are switched on, and their limits.</li>
+  <li><strong>Firebase Realtime Database</strong> — keeps the worldwide count of defeated zombies shown in the game.
+  The game sends only the number of zombies defeated, with no identifier.</li>
+  <li><strong>Google Play Billing</strong> — processes in-app purchases, as described above.</li>
+  <li><strong>Google Play Games Services</strong> — sign-in and Saved Games for cloud save, as described above.</li>
+  <li><strong>Unity Gaming Services</strong> (Authentication, Multiplayer Services, Relay) — online co-op rooms, as
+  described above.</li>
   <li><strong>Unity LevelPlay, ironSource Ads and Unity Ads</strong> — optional reward ads, as described above.</li>
 </ul>
-<p>Firebase is provided by Google LLC under the <a href="https://policies.google.com/privacy">Google Privacy
-Policy</a>; LevelPlay, ironSource Ads and Unity Ads by Unity Technologies under the
+<p>Firebase, Google Play Billing and Google Play Games Services are provided by Google LLC under the
+<a href="https://policies.google.com/privacy">Google Privacy Policy</a>; Unity Gaming Services, LevelPlay,
+ironSource Ads and Unity Ads by Unity Technologies under the
 <a href="https://unity.com/legal/game-player-and-app-user-privacy-policy">Unity privacy policy</a>.</p>
 
-<h2>In-App Purchases</h2>
-<p>We may add optional in-app purchases in a future version. Before they are enabled, this policy will be updated.
-Payment details are always handled by Google Play; we never receive them.</p>
-
 <h2>How We Use Data</h2>
-<p>Collected data is used to operate the game, measure how it is played, fix problems, improve the experience,
-and, through our ad partners, to show the optional reward ads you choose to watch. We do not sell your data.</p>
+<p>Collected data is used to operate the game, deliver and restore purchases, check that purchases are genuine,
+keep your progress in cloud save, run online co-op rooms, measure how the game and its store are used, fix
+problems, improve the experience, and, through our ad partners, to show the optional reward ads you choose to watch.
+We do not sell your data.</p>
 
 <h2>Children's Privacy</h2>
 <p>Inkfall is not directed to children under 13. We do not knowingly collect personal data from children
 under 13.</p>
 
 <h2>Data Security and Retention</h2>
-<p>Game data stored on your device is removed when you uninstall the app or clear its data. Analytics data is
-processed under Google's security standards and kept only as long as needed for the purposes above
-(Google Analytics' default retention). Ad partners keep data under their own policies linked above.</p>
+<p>Game data stored on your device is removed when you uninstall the app or clear its data. The cloud save copy stays
+in your Play Games account until you delete it there. Analytics data is processed under Google's security standards
+and kept only as long as needed for the purposes above (Google Analytics' default retention). Purchase records are
+kept by Google Play under its own policies. Co-op room data is removed when the room closes; Unity and our ad
+partners keep data under their own policies linked above.</p>
 
 <h2>Your Rights</h2>
 <p>You can reset the app's identifiers by clearing the app's data or reinstalling it, and your advertising ID in
-your device settings. Contact us for any requests regarding your data, including deletion.</p>
+your device settings. You can delete your cloud save from your Google Play Games settings. Contact us for any
+requests regarding your data, including deletion.</p>
 
 <h2>Changes</h2>
 <p>This policy may be updated from time to time. Changes take effect once published on this page.</p>
